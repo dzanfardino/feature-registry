@@ -1,0 +1,33 @@
+{
+  "name": "feature-registry",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Open-source, domain-agnostic registry for software features, flags, dependencies, and release prerequisites.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm run build -w @feature-registry/shared && npm run build --workspaces --if-present",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "npm run test --workspaces --if-present",
+    "postinstall": "npm run build -w @feature-registry/shared",
+    "dev:api": "npm run start:dev -w @feature-registry/api",
+    "dev:web": "npm run dev -w @feature-registry/web",
+    "seed": "npm run seed -w @feature-registry/api"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  }
+}

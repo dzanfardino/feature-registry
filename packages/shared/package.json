@@ -1,0 +1,16 @@
+{
+  "name": "@feature-registry/shared",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "echo 'linted from repo root'",
+    "test": "echo 'no standalone tests'"
+  }
+}
